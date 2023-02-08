@@ -1,6 +1,6 @@
 # chatapp
 
-An example chat application for EECS 4222 Distributed Systems
+An example chat application
 
 ## Usage
 The [`chatapp.yaml`](./chatapp.yaml) file describes the Kubernetes objects for the application. Please use the following commands to deploy the chat application to the namespace `chatapp` on a Kubernetes cluster. 
@@ -24,7 +24,7 @@ docker build -t eecs4222/chatapp-backend .
 ```
 
 ### Frontend
-The [chatapp-frontend](./chatapp-frontend) directory contains the source code for the frontend service, which containerizes and leverages NGINX as both a web server to serve static files and a uWSGI proxy. The web server listens on port `4222`.
+The [chatapp-frontend](./chatapp-frontend) directory contains the source code for the frontend service, which containerizes and leverages NGINX as both a web server to serve static files and a uWSGI (WebSocket) proxy. The web server listens on port `4222`.
 
 You can use the following commands to build the Docker image.
 ```
