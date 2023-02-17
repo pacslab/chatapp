@@ -3,6 +3,8 @@
 An example chat application
 
 ## Usage
+Please note that you need to obtain your credential for the private registry (see project description) and create a secret named `regcred` in the `chatapp` namespace before deploying the example chat application.
+
 The [`chatapp.yaml`](./chatapp.yaml) file describes the Kubernetes objects for the application. Please use the following commands to deploy the chat application to the namespace `chatapp` on a Kubernetes cluster. 
 
 ```
