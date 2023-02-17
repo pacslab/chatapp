@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: chatapp-backend
-        image: eecs4222/chatapp-backend
+        image: harbor.pacslab.ca/eecs4222/chatapp-backend
         ports:
         - containerPort: 4222
         resources:
@@ -27,6 +27,8 @@ spec:
             cpu: 400m
             memory: 512Mi
       restartPolicy: Always
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -45,7 +47,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: chatapp-frontend
-        image: eecs4222/chatapp-frontend
+        image: harbor.pacslab.ca/eecs4222/chatapp-frontend
         ports:
         - containerPort: 4222
         resources:
@@ -56,6 +58,8 @@ spec:
             cpu: 200m
             memory: 256Mi
       restartPolicy: Always
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -73,7 +77,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: redis
-        image: redis:alpine
+        image: harbor.pacslab.ca/eecs4222/redis:alpine
         ports:
         - containerPort: 6379
         resources:
@@ -84,6 +88,8 @@ spec:
             cpu: 200m
             memory: 256Mi
       restartPolicy: Always
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: v1
 kind: Service

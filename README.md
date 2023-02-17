@@ -20,7 +20,7 @@ The [chatapp-backend](./chatapp-backend) directory contains the source code for 
 You can use the following commands to build the Docker image.
 ```
 cd chatapp-backend
-docker build -t eecs4222/chatapp-backend .
+docker build -t harbor.pacslab.ca/eecs4222/chatapp-backend .
 ```
 
 ### Frontend
@@ -29,7 +29,7 @@ The [chatapp-frontend](./chatapp-frontend) directory contains the source code fo
 You can use the following commands to build the Docker image.
 ```
 cd chatapp-frontend
-docker build -t eecs4222/chatapp-frontend .
+docker build -t harbor.pacslab.ca/eecs4222/chatapp-frontend .
 ```
 
 ## Note
